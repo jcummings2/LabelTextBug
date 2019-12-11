@@ -2,6 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="LabelTextBug.MainPage">
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Label.Text>
+Welcome to Xamarin.Forms!
+This XAML won't compile. It fails with an error.
+<!-- Comment not allowed after first non-whitespace character -->
+On mac: MainPage.xaml: Error: Specified cast is not valid. (LabelTextBug)
+On windows: Unable to cast object of type 'Xamarin.Forms.Xaml.ListNode' to type 'Xamarin.Forms.Xaml.IElementNode'.
+
+            </Label.Text>
+        </Label>
     </StackLayout>
 </ContentPage>
